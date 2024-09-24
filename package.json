@@ -1,0 +1,44 @@
+{
+  "name": "codeeditor",
+  "widgetName": "CodeEditor",
+  "version": "1.0.0",
+  "description": "Embeddable code editor widget, powered by Ace editor.",
+  "copyright": "© Mendix Technology BV 2022. All rights reserved.",
+  "author": "Carter Moorse",
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "Apache-2.0",
+  "config": {
+    "projectPath": "./tests/testProject",
+    "mendixHost": "http://localhost:8080",
+    "developmentPort": 3000
+  },
+  "packagePath": "mendix",
+  "scripts": {
+    "start": "pluggable-widgets-tools start:server",
+    "dev": "pluggable-widgets-tools start:web",
+    "build": "pluggable-widgets-tools build:web",
+    "lint": "pluggable-widgets-tools lint",
+    "lint:fix": "pluggable-widgets-tools lint:fix",
+    "prerelease": "npm run lint",
+    "release": "pluggable-widgets-tools release:web"
+  },
+  "devDependencies": {
+    "@mendix/pluggable-widgets-tools": "^10.5.0",
+    "@types/big.js": "^6.0.2"
+  },
+  "dependencies": {
+    "ace-builds": "^1.32.3",
+    "classnames": "^2.2.6",
+    "react-ace": "^10.1.0"
+  },
+  "resolutions": {
+    "react": "18.2.0",
+    "react-native": "0.70.7"
+  },
+  "overrides": {
+    "react": "18.2.0",
+    "react-native": "0.70.7"
+  }
+}

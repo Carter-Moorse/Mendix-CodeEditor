@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.codeeditor.CodeEditor" pluginWidget="true" needsEntityContext="true"
+  offlineCapable="true"
+  supportedPlatform="Web"
+  xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+  <name>Code Editor</name>
+  <description>Embeddable code editor widget, powered by Ace editor.</description>
+  <icon />
+  <properties>
+    <propertyGroup caption="General">
+      <propertyGroup caption="General">
+        <property key="height" type="string" defaultValue="500px" required="true">
+          <caption>Height</caption>
+          <description>CSS height string</description>
+        </property>
+        <property key="width" type="string" defaultValue="500px" required="true">
+          <caption>Width</caption>
+          <description>CSS width string</description>
+        </property>
+        <property key="theme" type="enumeration" defaultValue="github">
+          <caption>Theme</caption>
+          <description></description>
+          <enumerationValues>
+            <enumerationValue key="ambiance">Ambiance</enumerationValue>
+            <enumerationValue key="chaos">Chaos</enumerationValue>
+            <enumerationValue key="chrome">Chrome</enumerationValue>
+            <enumerationValue key="cloud9_day">Cloud9 Day</enumerationValue>
+            <enumerationValue key="cloud9_night">Cloud9 Night</enumerationValue>
+            <enumerationValue key="cloud9_night_low_color">Cloud9 Night Low Color</enumerationValue>
+            <enumerationValue key="cloud_editor">Cloud Editor</enumerationValue>
+            <enumerationValue key="cloud_editor_dark">Cloud Editor Dark</enumerationValue>
+            <enumerationValue key="clouds">Clouds</enumerationValue>
+            <enumerationValue key="clouds_midnight">Clouds Midnight</enumerationValue>
+            <enumerationValue key="cobalt">Cobalt</enumerationValue>
+            <enumerationValue key="crimson_editor">Crimson Editor</enumerationValue>
+            <enumerationValue key="dawn">Dawn</enumerationValue>
+            <enumerationValue key="dracula">Dracula</enumerationValue>
+            <enumerationValue key="dreamweaver">Dreamweaver</enumerationValue>
+            <enumerationValue key="eclipse">Eclipse</enumerationValue>
+            <enumerationValue key="github">Github</enumerationValue>
+            <enumerationValue key="github_dark">Github Dark</enumerationValue>
+            <enumerationValue key="gob">Gob</enumerationValue>
+            <enumerationValue key="gruvbox">Gruvbox</enumerationValue>
+            <enumerationValue key="gruvbox_dark_hard">Gruvbox Dark Hard</enumerationValue>
+            <enumerationValue key="gruvbox_light_hard">Gruvbox Light Hard</enumerationValue>
+            <enumerationValue key="idle_fingers">Idle Fingers</enumerationValue>
+            <enumerationValue key="iplastic">Iplastic</enumerationValue>
+            <enumerationValue key="katzenmilch">Katzenmilch</enumerationValue>
+            <enumerationValue key="kr_theme">Kr Theme</enumerationValue>
+            <enumerationValue key="kuroir">Kuroir</enumerationValue>
+            <enumerationValue key="merbivore">Merbivore</enumerationValue>
+            <enumerationValue key="merbivore_soft">Merbivore Soft</enumerationValue>
+            <enumerationValue key="mono_industrial">Mono Industrial</enumerationValue>
+            <enumerationValue key="monokai">Monokai</enumerationValue>
+            <enumerationValue key="nord_dark">Nord Dark</enumerationValue>
+            <enumerationValue key="one_dark">One Dark</enumerationValue>
+            <enumerationValue key="pastel_on_dark">Pastel On Dark</enumerationValue>
+            <enumerationValue key="solarized_dark">Solarized Dark</enumerationValue>
+            <enumerationValue key="solarized_light">Solarized Light</enumerationValue>
+            <enumerationValue key="sqlserver">Sqlserver</enumerationValue>
+            <enumerationValue key="terminal">Terminal</enumerationValue>
+            <enumerationValue key="textmate">Textmate</enumerationValue>
+            <enumerationValue key="tomorrow">Tomorrow</enumerationValue>
+            <enumerationValue key="tomorrow_night">Tomorrow Night</enumerationValue>
+            <enumerationValue key="tomorrow_night_blue">Tomorrow Night Blue</enumerationValue>
+            <enumerationValue key="tomorrow_night_bright">Tomorrow Night Bright</enumerationValue>
+            <enumerationValue key="tomorrow_night_eighties">Tomorrow Night Eighties</enumerationValue>
+            <enumerationValue key="twilight">Twilight</enumerationValue>
+            <enumerationValue key="vibrant_ink">Vibrant Ink</enumerationValue>
+            <enumerationValue key="xcode">Xcode</enumerationValue>
+          </enumerationValues>
+        </property>
+        <property key="mode" type="enumeration" defaultValue="html">
+          <caption>Language</caption>
+          <description></description>
+          <enumerationValues>
+            <enumerationValue key="abap">Abap</enumerationValue>
+            <enumerationValue key="abc">Abc</enumerationValue>
+            <enumerationValue key="actionscript">Actionscript</enumerationValue>
+            <enumerationValue key="ada">Ada</enumerationValue>
+            <enumerationValue key="alda">Alda</enumerationValue>
+            <enumerationValue key="apache_conf">Apache Conf</enumerationValue>
+            <enumerationValue key="apex">Apex</enumerationValue>
+            <enumerationValue key="applescript">Applescript</enumerationValue>
+            <enumerationValue key="aql">Aql</enumerationValue>
+            <enumerationValue key="asciidoc">Asciidoc</enumerationValue>
+            <enumerationValue key="asl">Asl</enumerationValue>
+            <enumerationValue key="assembly_x86">Assembly X86</enumerationValue>
+            <enumerationValue key="astro">Astro</enumerationValue>
+            <enumerationValue key="autohotkey">Autohotkey</enumerationValue>
+            <enumerationValue key="batchfile">Batchfile</enumerationValue>
+            <enumerationValue key="bibtex">Bibtex</enumerationValue>
+            <enumerationValue key="c_cpp">C Cpp</enumerationValue>
+            <enumerationValue key="c9search">C9search</enumerationValue>
+            <enumerationValue key="cirru">Cirru</enumerationValue>
+            <enumerationValue key="clojure">Clojure</enumerationValue>
+            <enumerationValue key="cobol">Cobol</enumerationValue>
+            <enumerationValue key="coffee">Coffee</enumerationValue>
+            <enumerationValue key="coldfusion">Coldfusion</enumerationValue>
+            <enumerationValue key="crystal">Crystal</enumerationValue>
+            <enumerationValue key="csharp">Csharp</enumerationValue>
+            <enumerationValue key="csound_document">Csound Document</enumerationValue>
+            <enumerationValue key="csound_orchestra">Csound Orchestra</enumerationValue>
+            <enumerationValue key="csound_score">Csound Score</enumerationValue>
+            <enumerationValue key="csp">Csp</enumerationValue>
+            <enumerationValue key="css">Css</enumerationValue>
+            <enumerationValue key="curly">Curly</enumerationValue>
+            <enumerationValue key="cuttlefish">Cuttlefish</enumerationValue>
+            <enumerationValue key="d">D</enumerationValue>
+            <enumerationValue key="dart">Dart</enumerationValue>
+            <enumerationValue key="diff">Diff</enumerationValue>
+            <enumerationValue key="django">Django</enumerationValue>
+            <enumerationValue key="dockerfile">Dockerfile</enumerationValue>
+            <enumerationValue key="dot">Dot</enumerationValue>
+            <enumerationValue key="drools">Drools</enumerationValue>
+            <enumerationValue key="edifact">Edifact</enumerationValue>
+            <enumerationValue key="eiffel">Eiffel</enumerationValue>
+            <enumerationValue key="ejs">Ejs</enumerationValue>
+            <enumerationValue key="elixir">Elixir</enumerationValue>
+            <enumerationValue key="elm">Elm</enumerationValue>
+            <enumerationValue key="erlang">Erlang</enumerationValue>
+            <enumerationValue key="flix">Flix</enumerationValue>
+            <enumerationValue key="forth">Forth</enumerationValue>
+            <enumerationValue key="fortran">Fortran</enumerationValue>
+            <enumerationValue key="fsharp">Fsharp</enumerationValue>
+            <enumerationValue key="fsl">Fsl</enumerationValue>
+            <enumerationValue key="ftl">Ftl</enumerationValue>
+            <enumerationValue key="gcode">Gcode</enumerationValue>
+            <enumerationValue key="gherkin">Gherkin</enumerationValue>
+            <enumerationValue key="gitignore">Gitignore</enumerationValue>
+            <enumerationValue key="glsl">Glsl</enumerationValue>
+            <enumerationValue key="gobstones">Gobstones</enumerationValue>
+            <enumerationValue key="golang">Golang</enumerationValue>
+            <enumerationValue key="graphqlschema">Graphqlschema</enumerationValue>
+            <enumerationValue key="groovy">Groovy</enumerationValue>
+            <enumerationValue key="haml">Haml</enumerationValue>
+            <enumerationValue key="handlebars">Handlebars</enumerationValue>
+            <enumerationValue key="haskell">Haskell</enumerationValue>
+            <enumerationValue key="haskell_cabal">Haskell Cabal</enumerationValue>
+            <enumerationValue key="haxe">Haxe</enumerationValue>
+            <enumerationValue key="hjson">Hjson</enumerationValue>
+            <enumerationValue key="html">Html</enumerationValue>
+            <enumerationValue key="html_elixir">Html Elixir</enumerationValue>
+            <enumerationValue key="html_ruby">Html Ruby</enumerationValue>
+            <enumerationValue key="ini">Ini</enumerationValue>
+            <enumerationValue key="io">Io</enumerationValue>
+            <enumerationValue key="ion">Ion</enumerationValue>
+            <enumerationValue key="jack">Jack</enumerationValue>
+            <enumerationValue key="jade">Jade</enumerationValue>
+            <enumerationValue key="java">Java</enumerationValue>
+            <enumerationValue key="javascript">Javascript</enumerationValue>
+            <enumerationValue key="jexl">Jexl</enumerationValue>
+            <enumerationValue key="json">Json</enumerationValue>
+            <enumerationValue key="json5">Json5</enumerationValue>
+            <enumerationValue key="jsoniq">Jsoniq</enumerationValue>
+            <enumerationValue key="jsp">Jsp</enumerationValue>
+            <enumerationValue key="jssm">Jssm</enumerationValue>
+            <enumerationValue key="jsx">Jsx</enumerationValue>
+            <enumerationValue key="julia">Julia</enumerationValue>
+            <enumerationValue key="kotlin">Kotlin</enumerationValue>
+            <enumerationValue key="latex">Latex</enumerationValue>
+            <enumerationValue key="latte">Latte</enumerationValue>
+            <enumerationValue key="less">Less</enumerationValue>
+            <enumerationValue key="liquid">Liquid</enumerationValue>
+            <enumerationValue key="lisp">Lisp</enumerationValue>
+            <enumerationValue key="livescript">Livescript</enumerationValue>
+            <enumerationValue key="logiql">Logiql</enumerationValue>
+            <enumerationValue key="logtalk">Logtalk</enumerationValue>
+            <enumerationValue key="lsl">Lsl</enumerationValue>
+            <enumerationValue key="lua">Lua</enumerationValue>
+            <enumerationValue key="luapage">Luapage</enumerationValue>
+            <enumerationValue key="lucene">Lucene</enumerationValue>
+            <enumerationValue key="makefile">Makefile</enumerationValue>
+            <enumerationValue key="markdown">Markdown</enumerationValue>
+            <enumerationValue key="mask">Mask</enumerationValue>
+            <enumerationValue key="matlab">Matlab</enumerationValue>
+            <enumerationValue key="maze">Maze</enumerationValue>
+            <enumerationValue key="mediawiki">Mediawiki</enumerationValue>
+            <enumerationValue key="mel">Mel</enumerationValue>
+            <enumerationValue key="mips">Mips</enumerationValue>
+            <enumerationValue key="mixal">Mixal</enumerationValue>
+            <enumerationValue key="mushcode">Mushcode</enumerationValue>
+            <enumerationValue key="mysql">Mysql</enumerationValue>
+            <enumerationValue key="nasal">Nasal</enumerationValue>
+            <enumerationValue key="nginx">Nginx</enumerationValue>
+            <enumerationValue key="nim">Nim</enumerationValue>
+            <enumerationValue key="nix">Nix</enumerationValue>
+            <enumerationValue key="nsis">Nsis</enumerationValue>
+            <enumerationValue key="nunjucks">Nunjucks</enumerationValue>
+            <enumerationValue key="objectivec">Objectivec</enumerationValue>
+            <enumerationValue key="ocaml">Ocaml</enumerationValue>
+            <enumerationValue key="odin">Odin</enumerationValue>
+            <enumerationValue key="partiql">Partiql</enumerationValue>
+            <enumerationValue key="pascal">Pascal</enumerationValue>
+            <enumerationValue key="perl">Perl</enumerationValue>
+            <enumerationValue key="pgsql">Pgsql</enumerationValue>
+            <enumerationValue key="php">Php</enumerationValue>
+            <enumerationValue key="php_laravel_blade">Php Laravel Blade</enumerationValue>
+            <enumerationValue key="pig">Pig</enumerationValue>
+            <enumerationValue key="plain_text">Plain Text</enumerationValue>
+            <enumerationValue key="plsql">Plsql</enumerationValue>
+            <enumerationValue key="powershell">Powershell</enumerationValue>
+            <enumerationValue key="praat">Praat</enumerationValue>
+            <enumerationValue key="prisma">Prisma</enumerationValue>
+            <enumerationValue key="prolog">Prolog</enumerationValue>
+            <enumerationValue key="properties">Properties</enumerationValue>
+            <enumerationValue key="protobuf">Protobuf</enumerationValue>
+            <enumerationValue key="prql">Prql</enumerationValue>
+            <enumerationValue key="puppet">Puppet</enumerationValue>
+            <enumerationValue key="python">Python</enumerationValue>
+            <enumerationValue key="qml">Qml</enumerationValue>
+            <enumerationValue key="r">R</enumerationValue>
+            <enumerationValue key="raku">Raku</enumerationValue>
+            <enumerationValue key="razor">Razor</enumerationValue>
+            <enumerationValue key="rdoc">Rdoc</enumerationValue>
+            <enumerationValue key="red">Red</enumerationValue>
+            <enumerationValue key="redshift">Redshift</enumerationValue>
+            <enumerationValue key="rhtml">Rhtml</enumerationValue>
+            <enumerationValue key="robot">Robot</enumerationValue>
+            <enumerationValue key="rst">Rst</enumerationValue>
+            <enumerationValue key="ruby">Ruby</enumerationValue>
+            <enumerationValue key="rust">Rust</enumerationValue>
+            <enumerationValue key="sac">Sac</enumerationValue>
+            <enumerationValue key="sass">SASS</enumerationValue>
+            <enumerationValue key="scad">Scad</enumerationValue>
+            <enumerationValue key="scala">Scala</enumerationValue>
+            <enumerationValue key="scheme">Scheme</enumerationValue>
+            <enumerationValue key="scrypt">Scrypt</enumerationValue>
+            <enumerationValue key="scss">SCSS</enumerationValue>
+            <enumerationValue key="sh">Sh</enumerationValue>
+            <enumerationValue key="sjs">Sjs</enumerationValue>
+            <enumerationValue key="slim">Slim</enumerationValue>
+            <enumerationValue key="smarty">Smarty</enumerationValue>
+            <enumerationValue key="smithy">Smithy</enumerationValue>
+            <enumerationValue key="snippets">Snippets</enumerationValue>
+            <enumerationValue key="soy_template">Soy Template</enumerationValue>
+            <enumerationValue key="space">Space</enumerationValue>
+            <enumerationValue key="sparql">Sparql</enumerationValue>
+            <enumerationValue key="sql">SQL</enumerationValue>
+            <enumerationValue key="sqlserver">SQLServer</enumerationValue>
+            <enumerationValue key="stylus">Stylus</enumerationValue>
+            <enumerationValue key="svg">Svg</enumerationValue>
+            <enumerationValue key="swift">Swift</enumerationValue>
+            <enumerationValue key="tcl">Tcl</enumerationValue>
+            <enumerationValue key="terraform">Terraform</enumerationValue>
+            <enumerationValue key="tex">Tex</enumerationValue>
+            <enumerationValue key="text">Text</enumerationValue>
+            <enumerationValue key="textile">Textile</enumerationValue>
+            <enumerationValue key="toml">Toml</enumerationValue>
+            <enumerationValue key="tsx">TSX</enumerationValue>
+            <enumerationValue key="turtle">Turtle</enumerationValue>
+            <enumerationValue key="twig">Twig</enumerationValue>
+            <enumerationValue key="typescript">Typescript</enumerationValue>
+            <enumerationValue key="vala">Vala</enumerationValue>
+            <enumerationValue key="vbscript">Vbscript</enumerationValue>
+            <enumerationValue key="velocity">Velocity</enumerationValue>
+            <enumerationValue key="verilog">Verilog</enumerationValue>
+            <enumerationValue key="vhdl">Vhdl</enumerationValue>
+            <enumerationValue key="visualforce">Visualforce</enumerationValue>
+            <enumerationValue key="wollok">Wollok</enumerationValue>
+            <enumerationValue key="xml">XML</enumerationValue>
+            <enumerationValue key="xquery">XQuery</enumerationValue>
+            <enumerationValue key="yaml">YAML</enumerationValue>
+            <enumerationValue key="zeek">Zeek</enumerationValue>
+            <enumerationValue key="zig">Zig</enumerationValue>
+          </enumerationValues>
+        </property>
+      </propertyGroup>
+      <propertyGroup caption="Data source">
+        <property key="value" type="attribute">
+          <caption>Attribute</caption>
+          <description></description>
+          <attributeTypes>
+            <attributeType name="String"/>
+          </attributeTypes>
+        </property>
+      </propertyGroup>
+      <propertyGroup caption="Editability">
+        <systemProperty key="Editability"/>
+      </propertyGroup>
+      <propertyGroup caption="Visibility">
+        <systemProperty key="Visibility"/>
+      </propertyGroup>
+    </propertyGroup>
+    <propertyGroup caption="Editor options">
+      <property key="selectionStyle" type="enumeration" defaultValue="text">
+        <caption>Selection style</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="line">Line</enumerationValue>
+          <enumerationValue key="text">Text</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="highlightActiveLine" type="boolean" defaultValue="false">
+        <caption>Highlight active line</caption>
+        <description></description>
+      </property>      
+      <property key="highlightSelectedWord" type="boolean" defaultValue="false">
+        <caption>Highlight selected word</caption>
+        <description></description>
+      </property>
+      <property key="cursorStyle" type="enumeration" defaultValue="ace">
+        <caption>Selection style</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="ace">Ace</enumerationValue>
+          <enumerationValue key="slim">Slim</enumerationValue>
+          <enumerationValue key="smooth">Smooth</enumerationValue>
+          <enumerationValue key="wide">Wide</enumerationValue>
+        </enumerationValues>
+      </property>
+      <!-- mergeUndoDeltas -->
+      <property key="behavioursEnabled" type="boolean" defaultValue="false">
+        <caption>Behaviours enabled</caption>
+        <description></description>
+      </property>
+      <property key="wrapBehavioursEnabled" type="boolean" defaultValue="false">
+        <caption>Wrap behaviours enabled</caption>
+        <description></description>
+      </property>
+      <property key="autoScrollEditorIntoView" type="boolean" defaultValue="false">
+        <caption>Auto scroll editor into view</caption>
+        <description></description>
+      </property>
+      <property key="copyWithEmptySelection" type="boolean" defaultValue="false">
+        <caption>Copy with empty selection</caption>
+        <description></description>
+      </property>
+      <property key="useSoftTabs" type="boolean" defaultValue="false">
+        <caption>Use soft tabs</caption>
+        <description></description>
+      </property>
+      <property key="navigateWithinSoftTabs" type="boolean" defaultValue="false">
+        <caption>Navigate within soft tabs</caption>
+        <description></description>
+      </property>
+      <property key="enableMultiselect" type="boolean" defaultValue="true">
+        <caption>Enable multiselect</caption>
+        <description></description>
+      </property>
+      <property key="enableAutoIndent" type="boolean" defaultValue="true">
+        <caption>Enable auto indent</caption>
+        <description></description>
+      </property>
+      <property key="enableKeyboardAccessibility" type="boolean" defaultValue="true">
+        <caption>Enable keyboard accessibility</caption>
+        <description></description>
+      </property>
+      <property key="enableBasicAutocompletion" type="boolean" defaultValue="true">
+        <caption>Enable basic autocompletion</caption>
+        <description></description>
+      </property>
+      <property key="enableLiveAutocompletion" type="boolean" defaultValue="true">
+        <caption>Enable live autocompletion</caption>
+        <description></description>
+      </property>
+      <property key="enableSnippets" type="boolean" defaultValue="false">
+        <caption>Enable snippets</caption>
+        <description></description>
+      </property>
+      <property key="enableEmmet" type="boolean" defaultValue="false">
+        <caption>Enable emmet</caption>
+        <description></description>
+      </property>
+      <property key="useElasticTabstops" type="boolean" defaultValue="false">
+        <caption>Use elastic tabstops</caption>
+        <description></description>
+      </property>
+    </propertyGroup>
+    <propertyGroup caption="Render options">
+      <property key="hScrollBarAlwaysVisible" type="boolean" defaultValue="false">
+        <caption>H scroll bar always visible</caption>
+        <description></description>
+      </property>
+      <property key="vScrollBarAlwaysVisible" type="boolean" defaultValue="false">
+        <caption>V scroll bar always visible</caption>
+        <description></description>
+      </property>
+      <property key="highlightGutterLine" type="boolean" defaultValue="false">
+        <caption>Highlight gutter line</caption>
+        <description></description>
+      </property>
+      <property key="animatedScroll" type="boolean" defaultValue="false">
+        <caption>Animated scroll</caption>
+        <description></description>
+      </property>
+      <property key="showInvisibles" type="boolean" defaultValue="false">
+        <caption>Show invisibles</caption>
+        <description></description>
+      </property>
+      <property key="showPrintMargin" type="boolean" defaultValue="false">
+        <caption>Show print margin</caption>
+        <description></description>
+      </property>
+      <property key="printMarginColumn" type="integer" defaultValue="80">
+        <caption>Print margin column</caption>
+        <description></description>
+      </property>
+      <property key="fadeFoldWidgets" type="boolean" defaultValue="false">
+        <caption>Fade fold widgets</caption>
+        <description></description>
+      </property>
+      <property key="showFoldWidgets" type="boolean" defaultValue="true">
+        <caption>Show fold widgets</caption>
+        <description></description>
+      </property>
+      <property key="showLineNumbers" type="boolean" defaultValue="true">
+        <caption>Show line numbers</caption>
+        <description></description>
+      </property>
+      <property key="showGutter" type="boolean" defaultValue="true">
+        <caption>Show gutter</caption>
+        <description></description>
+      </property>
+      <property key="displayIndentGuides" type="boolean" defaultValue="true">
+        <caption>Display indent guides</caption>
+        <description></description>
+      </property>
+      <property key="highlightIndentGuides" type="boolean" defaultValue="false">
+        <caption>Highlight indent guides</caption>
+        <description></description>
+      </property>
+      <property key="fontSize" type="string" defaultValue="12px">
+        <caption>Font size</caption>
+        <description>CSS font-size string</description>
+      </property>
+      <property key="fontFamily" type="string" defaultValue="" required="false">
+        <caption>Font family</caption>
+        <description>CSS font-family string</description>
+      </property>
+      <property key="maxLines" type="integer" defaultValue="0">
+        <caption>Max lines</caption>
+        <description></description>
+      </property>
+      <property key="minLines" type="integer" defaultValue="0">
+        <caption>Min lines</caption>
+        <description></description>
+      </property>
+      <!-- scrollPastEnd -->
+      <property key="fixedWidthGutter" type="boolean" defaultValue="false">
+        <caption>Fixed width gutter</caption>
+        <description></description>
+      </property>
+      <property key="customScrollbar" type="boolean" defaultValue="false">
+        <caption>Custom scrollbar</caption>
+        <description></description>
+      </property>
+      <!-- hasCssTransforms -->
+      <!-- maxPixelHeight -->
+      <!-- useSvgGutterIcons -->
+    </propertyGroup>
+    <propertyGroup caption="Mouse options">
+      <property key="scrollSpeed" type="integer" defaultValue="0">
+        <caption>Scroll speed</caption>
+        <description></description>
+      </property>
+      <property key="dragDelay" type="integer" defaultValue="0">
+        <caption>Drag delay</caption>
+        <description></description>
+      </property>
+      <property key="dragEnabled" type="boolean" defaultValue="true">
+        <caption>Drag enabled</caption>
+        <description></description>
+      </property>
+      <property key="focusTimout" type="integer" defaultValue="0">
+        <caption>Focus timeout</caption>
+        <description></description>
+      </property>
+      <property key="tooltipFollowsMouse" type="boolean" defaultValue="false">
+        <caption>Tooltip follows mouse</caption>
+        <description></description>
+      </property>
+    </propertyGroup>
+    <propertyGroup caption="Session options">
+      <property key="firstLineNumber" type="integer" defaultValue="1">
+        <caption>First line number</caption>
+        <description></description>
+      </property>
+      <!-- overwrite -->
+      <property key="newLineMode" type="enumeration" defaultValue="auto">
+        <caption>Selection style</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="auto">Auto</enumerationValue>
+          <enumerationValue key="unix">Unix</enumerationValue>
+          <enumerationValue key="windows">Windows</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="useWorker" type="boolean" defaultValue="true">
+        <caption>Use worker</caption>
+        <description></description>
+      </property>
+      <property key="indentedSoftWrap" type="boolean" defaultValue="true">
+        <caption>Indented soft wrap</caption>
+        <description></description>
+      </property>
+      <property key="tabSize" type="integer" defaultValue="2">
+        <caption>Tab size</caption>
+        <description></description>
+      </property>
+      <property key="wrap" type="enumeration" defaultValue="true">
+        <caption>Wrap</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="off">Off</enumerationValue>
+          <enumerationValue key="free">Free</enumerationValue>
+          <enumerationValue key="printmargin">Print margin</enumerationValue>
+          <enumerationValue key="true">On</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="wrapMethod" type="enumeration" defaultValue="code">
+        <caption>Wrap method</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="code">Code</enumerationValue>
+          <enumerationValue key="text">Text</enumerationValue>
+          <enumerationValue key="auto">Auto</enumerationValue>
+        </enumerationValues>
+      </property>
+      <property key="foldStyle" type="enumeration" defaultValue="markbegin">
+        <caption>Fold style</caption>
+        <description></description>
+        <enumerationValues>
+          <enumerationValue key="markbegin">Mark begin</enumerationValue>
+          <enumerationValue key="markbeginend">Mark begin-end</enumerationValue>
+          <enumerationValue key="manual">Manual</enumerationValue>
+        </enumerationValues>
+      </property>
+    </propertyGroup>
+    <propertyGroup caption="Common">
+      <systemProperty key="Name"/>
+      <systemProperty key="TabIndex"/>
+    </propertyGroup>
+  </properties>
+</widget>
