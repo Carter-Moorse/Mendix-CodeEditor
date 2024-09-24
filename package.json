@@ -31,6 +31,7 @@
   "dependencies": {
     "ace-builds": "^1.32.3",
     "classnames": "^2.2.6",
+    "glob": "^11.0.0",
     "react-ace": "^10.1.0"
   },
   "resolutions": {

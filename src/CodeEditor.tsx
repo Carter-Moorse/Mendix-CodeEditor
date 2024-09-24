@@ -1,18 +1,18 @@
-import { Component, ReactNode, createElement } from "react";
+import { Component, ReactNode, createElement, createRef, RefObject } from "react";
 import { config } from "ace-builds";
 import AceEditor from "react-ace";
 
 import { CodeEditorContainerProps } from "../typings/CodeEditorProps";
 
-const cdn = "https://cdn.jsdelivr.net/npm/ace-builds@1.32.5/src-min-noconflict";
-config.set("basePath", cdn);
+const basePath = "widgets/mendix/codeeditor/src-noconflict";
+config.set("basePath", basePath);
 
-function loadAce(filename: string): Promise<HTMLScriptElement | null> {
+function loadScript(filename: string): Promise<HTMLScriptElement | null> {
   return new Promise((resolve) => {
-    const location = cdn+"/"+filename;
+    const location = basePath + "/" + filename;
     const head = document.getElementsByTagName("head")[0];
-    let script: HTMLScriptElement | null = document.querySelector("script[src=\""+location+"\"]");
-    if (script==null) {
+    let script: HTMLScriptElement | null = document.querySelector("script[src=\"" + location + "\"]");
+    if (script == null) {
       script = document.createElement("script");
       script.src = location;
       head.appendChild(script);
@@ -22,20 +22,31 @@ function loadAce(filename: string): Promise<HTMLScriptElement | null> {
   })
 }
 
-export default class CodeEditor extends Component<CodeEditorContainerProps> {
+interface CodeEditorState {
+  modulesLoaded: boolean
+}
+
+export default class CodeEditor extends Component<CodeEditorContainerProps, CodeEditorState> {
+  editorRef: RefObject<AceEditor> = createRef();
+  // state: Readonly<CodeEditorState> = { modulesLoaded: false };
+
   async loadExtensions(): Promise<void> {
     if (this.props.enableBasicAutocompletion ||
       this.props.enableLiveAutocompletion ||
-      this.props.enableSnippets) await loadAce("ext-language_tools.js");
-    if (this.props.enableEmmet) await loadAce("ext-emmet.js");
-    if (this.props.useElasticTabstops) await loadAce("ext-elastic_tabstops_lite.js");
+      this.props.enableSnippets) await loadScript("ext-language_tools.js");
+    if (this.props.enableEmmet) await loadScript("ext-emmet.js");
+    if (this.props.useElasticTabstops) await loadScript("ext-elastic_tabstops_lite.js");
+
+    // this.setState({ modulesLoaded: true });
   }
 
   render(): ReactNode {
-    this.loadExtensions();
+    // this.loadExtensions();
+    // if (!this.state.modulesLoaded) return null;
 
     return <AceEditor
       name={this.props.name}
+      ref={this.editorRef}
       style={this.props.style}
       className={this.props.class}
       mode={this.props.mode}
@@ -91,19 +102,19 @@ export default class CodeEditor extends Component<CodeEditorContainerProps> {
         scrollSpeed: this.props.scrollSpeed || undefined,
         dragDelay: this.props.dragDelay || undefined,
         dragEnabled: this.props.dragEnabled,
-          // focusTimout: this.props.focusTimout,
+        // focusTimout: this.props.focusTimout,
         tooltipFollowsMouse: this.props.tooltipFollowsMouse,
         firstLineNumber: this.props.firstLineNumber,
         // overwrite: this.props.overwrite,
-          // newLineMode: this.props.newLineMode,
+        // newLineMode: this.props.newLineMode,
         useWorker: this.props.useWorker,
         indentedSoftWrap: this.props.indentedSoftWrap,
         tabSize: this.props.tabSize,
-          // wrap: this.props.wrap,
-          // wrapMethod: this.props.wrapMethod,
-          // foldStyle: this.props.foldStyle,
+        // wrap: this.props.wrap,
+        // wrapMethod: this.props.wrapMethod,
+        // foldStyle: this.props.foldStyle,
         enableEmmet: this.props.enableEmmet
-          // useElasticTabstops: this.props.useElasticTabstops
+        // useElasticTabstops: this.props.useElasticTabstops
       }}
     />;
   }

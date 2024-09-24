@@ -1,0 +1,24 @@
+.widget-codeeditor-clickable {
+  cursor: pointer;
+}
+
+.widget-codeeditor {
+  display: inline-block;
+}
+
+.widget-codeeditor.badge:empty {
+  display: initial;
+  /* Fix padding to stay round */
+  padding: 3px 10px;
+}
+
+.widget-codeeditor.label:empty {
+  display: initial;
+  /* Fix padding to stay square */
+  padding: .2em .8em .3em;
+}
+
+.widget-codeeditor.badge {
+  min-width: 18px;
+  min-height: 18px;
+}
