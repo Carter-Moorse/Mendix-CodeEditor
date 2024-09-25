@@ -8,6 +8,14 @@
 
 </div>
 
+## Screenshots
+
+<div align="center">
+<img src="screenshots/html.png" alt="HTML editor screenshot" title="HTML editor" height="300px"/>
+<img src="screenshots/javascript.png" alt="JavaScript editor screenshot" title="JavaScript editor" height="300px"/>
+</div>
+
+
 ## Features
 See the complete feature list on [Ace GitHub](https://github.com/ajaxorg/ace?tab=readme-ov-file#features)
 
