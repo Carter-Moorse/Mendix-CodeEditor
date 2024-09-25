@@ -310,7 +310,10 @@
           <enumerationValue key="wide">Wide</enumerationValue>
         </enumerationValues>
       </property>
-      <!-- mergeUndoDeltas -->
+      <property key="mergeUndoDeltas" type="boolean" defaultValue="false">
+        <caption>Merge undo deltas</caption>
+        <description></description>
+      </property>
       <property key="behavioursEnabled" type="boolean" defaultValue="false">
         <caption>Behaviours enabled</caption>
         <description></description>
@@ -397,6 +400,10 @@
         <caption>Print margin column</caption>
         <description></description>
       </property>
+      <property key="printMargin" type="integer" defaultValue="0">
+        <caption>Print margin</caption>
+        <description></description>
+      </property>
       <property key="fadeFoldWidgets" type="boolean" defaultValue="false">
         <caption>Fade fold widgets</caption>
         <description></description>
@@ -437,7 +444,10 @@
         <caption>Min lines</caption>
         <description></description>
       </property>
-      <!-- scrollPastEnd -->
+      <property key="scrollPastEnd" type="boolean" defaultValue="false">
+        <caption>Scroll past end</caption>
+        <description></description>
+      </property>
       <property key="fixedWidthGutter" type="boolean" defaultValue="false">
         <caption>Fixed width gutter</caption>
         <description></description>
@@ -446,9 +456,18 @@
         <caption>Custom scrollbar</caption>
         <description></description>
       </property>
-      <!-- hasCssTransforms -->
-      <!-- maxPixelHeight -->
-      <!-- useSvgGutterIcons -->
+      <property key="hasCssTransforms" type="boolean" defaultValue="false">
+        <caption>Has CSS transforms</caption>
+        <description></description>
+      </property>
+      <property key="maxPixelHeight" type="integer" defaultValue="0">
+        <caption>Max pixel height</caption>
+        <description></description>
+      </property>
+      <property key="useSvgGutterIcons" type="boolean" defaultValue="false">
+        <caption>Use SVG gutter icons</caption>
+        <description></description>
+      </property>
     </propertyGroup>
     <propertyGroup caption="Mouse options">
       <property key="scrollSpeed" type="integer" defaultValue="0">
@@ -499,15 +518,9 @@
         <caption>Tab size</caption>
         <description></description>
       </property>
-      <property key="wrap" type="enumeration" defaultValue="true">
+      <property key="wrap" type="boolean" defaultValue="true">
         <caption>Wrap</caption>
         <description></description>
-        <enumerationValues>
-          <enumerationValue key="off">Off</enumerationValue>
-          <enumerationValue key="free">Free</enumerationValue>
-          <enumerationValue key="printmargin">Print margin</enumerationValue>
-          <enumerationValue key="true">On</enumerationValue>
-        </enumerationValues>
       </property>
       <property key="wrapMethod" type="enumeration" defaultValue="code">
         <caption>Wrap method</caption>

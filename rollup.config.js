@@ -10,7 +10,7 @@ import { fileURLToPath } from "node:url";
 
 
 const files = Object.fromEntries(
-  globSync("node_modules/ace-builds/src-noconflict/*.js").map(file => [
+  globSync("node_modules/ace-builds/src-noconflict/**/*.js").map(file => [
     // This remove `src/` as well as the file extension from each
     // file, so e.g. src/nested/foo.js becomes nested/foo
     path.relative(

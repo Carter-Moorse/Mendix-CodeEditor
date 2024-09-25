@@ -16,8 +16,6 @@ export type CursorStyleEnum = "ace" | "slim" | "smooth" | "wide";
 
 export type NewLineModeEnum = "auto" | "unix" | "windows";
 
-export type WrapEnum = "off" | "free" | "printmargin" | "true";
-
 export type WrapMethodEnum = "code" | "text" | "auto";
 
 export type FoldStyleEnum = "markbegin" | "markbeginend" | "manual";
@@ -36,6 +34,7 @@ export interface CodeEditorContainerProps {
     highlightActiveLine: boolean;
     highlightSelectedWord: boolean;
     cursorStyle: CursorStyleEnum;
+    mergeUndoDeltas: boolean;
     behavioursEnabled: boolean;
     wrapBehavioursEnabled: boolean;
     autoScrollEditorIntoView: boolean;
@@ -57,6 +56,7 @@ export interface CodeEditorContainerProps {
     showInvisibles: boolean;
     showPrintMargin: boolean;
     printMarginColumn: number;
+    printMargin: number;
     fadeFoldWidgets: boolean;
     showFoldWidgets: boolean;
     showLineNumbers: boolean;
@@ -67,8 +67,12 @@ export interface CodeEditorContainerProps {
     fontFamily: string;
     maxLines: number;
     minLines: number;
+    scrollPastEnd: boolean;
     fixedWidthGutter: boolean;
     customScrollbar: boolean;
+    hasCssTransforms: boolean;
+    maxPixelHeight: number;
+    useSvgGutterIcons: boolean;
     scrollSpeed: number;
     dragDelay: number;
     dragEnabled: boolean;
@@ -79,7 +83,7 @@ export interface CodeEditorContainerProps {
     useWorker: boolean;
     indentedSoftWrap: boolean;
     tabSize: number;
-    wrap: WrapEnum;
+    wrap: boolean;
     wrapMethod: WrapMethodEnum;
     foldStyle: FoldStyleEnum;
 }
@@ -93,6 +97,7 @@ export interface CodeEditorPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+    renderMode?: "design" | "xray" | "structure";
     height: string;
     width: string;
     theme: ThemeEnum;
@@ -102,6 +107,7 @@ export interface CodeEditorPreviewProps {
     highlightActiveLine: boolean;
     highlightSelectedWord: boolean;
     cursorStyle: CursorStyleEnum;
+    mergeUndoDeltas: boolean;
     behavioursEnabled: boolean;
     wrapBehavioursEnabled: boolean;
     autoScrollEditorIntoView: boolean;
@@ -123,6 +129,7 @@ export interface CodeEditorPreviewProps {
     showInvisibles: boolean;
     showPrintMargin: boolean;
     printMarginColumn: number | null;
+    printMargin: number | null;
     fadeFoldWidgets: boolean;
     showFoldWidgets: boolean;
     showLineNumbers: boolean;
@@ -133,8 +140,12 @@ export interface CodeEditorPreviewProps {
     fontFamily: string;
     maxLines: number | null;
     minLines: number | null;
+    scrollPastEnd: boolean;
     fixedWidthGutter: boolean;
     customScrollbar: boolean;
+    hasCssTransforms: boolean;
+    maxPixelHeight: number | null;
+    useSvgGutterIcons: boolean;
     scrollSpeed: number | null;
     dragDelay: number | null;
     dragEnabled: boolean;
@@ -145,7 +156,7 @@ export interface CodeEditorPreviewProps {
     useWorker: boolean;
     indentedSoftWrap: boolean;
     tabSize: number | null;
-    wrap: WrapEnum;
+    wrap: boolean;
     wrapMethod: WrapMethodEnum;
     foldStyle: FoldStyleEnum;
 }

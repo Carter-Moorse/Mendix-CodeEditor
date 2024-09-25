@@ -29,17 +29,24 @@
     "@types/big.js": "^6.0.2"
   },
   "dependencies": {
-    "ace-builds": "^1.32.3",
+    "ace-builds": "^1.35.0",
     "classnames": "^2.2.6",
+    "emmet": "^2.4.11",
     "glob": "^11.0.0",
-    "react-ace": "^10.1.0"
+    "react-ace": "^12.0.0"
   },
   "resolutions": {
     "react": "18.2.0",
-    "react-native": "0.70.7"
+    "react-native": "0.72.7",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
   },
   "overrides": {
     "react": "18.2.0",
-    "react-native": "0.70.7"
+    "react-native": "0.72.7",
+    "react-dom": "18.2.0",
+    "@types/react": "18.2.0",
+    "@types/react-dom": "18.2.0"
   }
 }
