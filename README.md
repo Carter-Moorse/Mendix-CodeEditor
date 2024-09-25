@@ -1,6 +1,7 @@
 <div align="center">
 
-  ![Cover image, code editor](coverimage.svg "Cover image")
+  <img src="coverimage.svg" alt="Cover image, code editor" title="Cover image" width="300px"/>
+  
   ### Mendix CodeEditor
 
   [Ace](https://ace.c9.io/) code editor, as a Mendix pluggable widget.
