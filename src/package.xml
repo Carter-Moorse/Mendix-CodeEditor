@@ -5,7 +5,7 @@
             <widgetFile path="CodeEditor.xml"/>
         </widgetFiles>
         <files>
-            <file path="mendix/codeeditor"/>
+            <file path="carterm/codeeditor"/>
         </files>
     </clientModule>
 </package>

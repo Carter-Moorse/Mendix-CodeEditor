@@ -9,16 +9,17 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 
+// Get list of modules from 'ace-builds'
 const files = Object.fromEntries(
-  globSync("node_modules/ace-builds/src-noconflict/**/*.js").map(file => [
-    // This remove `src/` as well as the file extension from each
-    // file, so e.g. src/nested/foo.js becomes nested/foo
+  globSync("node_modules/ace-builds/src-min-noconflict/**/*.js").map(file => [
+    // Remove the 'node_modules/ace-builds' path from the filepath. e.g.
+    // 'node_module/ace-builds/src-noconflict/ace.js' becomes 'src-noconflict/ace.js'
     path.relative(
       "node_modules/ace-builds",
       file.slice(0, file.length - path.extname(file).length)
     ),
-    // This expands the relative paths to absolute paths, so e.g.
-    // src/nested/foo becomes /project/src/nested/foo.js
+    // Expands the relative paths to absolute paths, so e.g.
+    // 'src-noconflict/ace.js' becomes 'C:/.../node_module/ace-builds/src-noconflict/ace.js'
     fileURLToPath(new URL(file, import.meta.url))
   ])
 );
@@ -29,6 +30,7 @@ const outWidgetDir = join(widgetPackage.replace(/\./g, "/"), widgetName.toLowerC
 export default args => {
   const config = args.configDefaultConfig;
 
+  // Use to debug the output files
   // console.log(files);
 
   config.unshift({

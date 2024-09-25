@@ -8,7 +8,7 @@ import { CodeEditorContainerProps } from "../typings/CodeEditorProps";
 export default class CodeEditor extends Component<CodeEditorContainerProps> {
   editorRef: RefObject<AceEditor> = createRef();
   
-  static basePath = "widgets/mendix/codeeditor/src-noconflict";
+  static basePath = "widgets/carterm/codeeditor/src-min-noconflict";
 
   loadAce(filename: string): Promise<HTMLScriptElement | null> {
     return new Promise((resolve) => {
