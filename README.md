@@ -1,5 +1,11 @@
-## CodeEditor
-[Ace](https://ace.c9.io/) code editor, as a Mendix pluggable widget.
+<div align="center">
+
+  ![Cover image, code editor](coverimage.svg "Cover image")
+  ### Mendix CodeEditor
+
+  [Ace](https://ace.c9.io/) code editor, as a Mendix pluggable widget.
+
+</div>
 
 ## Features
 See the complete feature list on [Ace GitHub](https://github.com/ajaxorg/ace?tab=readme-ov-file#features)
