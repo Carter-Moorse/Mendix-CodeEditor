@@ -71,7 +71,7 @@ export default class CodeEditor extends Component<CodeEditorContainerProps> {
       width={this.props.width}
       value={this.props.value.value}
       defaultValue={this.props.value.value}
-      debounceChangePeriod={100}
+      debounceChangePeriod={this.props.debounceChangePeriod}
       onChange={value => this.props.value.setValue(value)}
       editorProps={{ $blockScrolling: true }}
       setOptions={{

@@ -30,6 +30,7 @@ export interface CodeEditorContainerProps {
     theme: ThemeEnum;
     mode: ModeEnum;
     value: EditableValue<string>;
+    debounceChangePeriod: number;
     selectionStyle: SelectionStyleEnum;
     highlightActiveLine: boolean;
     highlightSelectedWord: boolean;
@@ -103,6 +104,7 @@ export interface CodeEditorPreviewProps {
     theme: ThemeEnum;
     mode: ModeEnum;
     value: string;
+    debounceChangePeriod: number | null;
     selectionStyle: SelectionStyleEnum;
     highlightActiveLine: boolean;
     highlightSelectedWord: boolean;

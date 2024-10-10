@@ -278,6 +278,10 @@
       </propertyGroup>
       <propertyGroup caption="Editability">
         <systemProperty key="Editability"/>
+        <property key="debounceChangePeriod" type="integer" defaultValue="500">
+          <caption>Change debounce (ms)</caption>
+          <description></description>
+        </property>
       </propertyGroup>
       <propertyGroup caption="Visibility">
         <systemProperty key="Visibility"/>
