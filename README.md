@@ -21,7 +21,6 @@ See the complete feature list on [Ace GitHub](https://github.com/ajaxorg/ace?tab
 
 ## Limitations
  - Surfaces most [not all] features available in the Ace editor. 
- - Does not set editability flag based on selected Mendix attribute. 
 
 ## Usage
 Simply add the widget to your Mendix project. No additional setup required.
