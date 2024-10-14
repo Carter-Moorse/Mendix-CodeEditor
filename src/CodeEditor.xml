@@ -358,11 +358,11 @@
         <caption>Enable basic autocompletion</caption>
         <description></description>
       </property>
-      <property key="enableLiveAutocompletion" type="boolean" defaultValue="true">
+      <property key="enableLiveAutocompletion" type="boolean" defaultValue="false">
         <caption>Enable live autocompletion</caption>
         <description></description>
       </property>
-      <property key="enableSnippets" type="boolean" defaultValue="false">
+      <property key="enableSnippets" type="boolean" defaultValue="true">
         <caption>Enable snippets</caption>
         <description></description>
       </property>
@@ -510,7 +510,7 @@
           <enumerationValue key="windows">Windows</enumerationValue>
         </enumerationValues>
       </property>
-      <property key="useWorker" type="boolean" defaultValue="true">
+      <property key="useWorker" type="boolean" defaultValue="false">
         <caption>Use worker</caption>
         <description></description>
       </property>
@@ -526,15 +526,7 @@
         <caption>Wrap</caption>
         <description></description>
       </property>
-      <property key="wrapMethod" type="enumeration" defaultValue="code">
-        <caption>Wrap method</caption>
-        <description></description>
-        <enumerationValues>
-          <enumerationValue key="code">Code</enumerationValue>
-          <enumerationValue key="text">Text</enumerationValue>
-          <enumerationValue key="auto">Auto</enumerationValue>
-        </enumerationValues>
-      </property>
+      <!-- wrapMethod -->
       <property key="foldStyle" type="enumeration" defaultValue="markbegin">
         <caption>Fold style</caption>
         <description></description>

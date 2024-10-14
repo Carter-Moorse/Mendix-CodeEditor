@@ -138,7 +138,7 @@ export default class CodeEditor extends Component<CodeEditorContainerProps> {
         indentedSoftWrap: this.props.indentedSoftWrap,
         tabSize: this.props.tabSize,
         wrap: this.props.wrap,
-        wrapMethod: this.props.wrapMethod,
+        // wrapMethod: this.props.wrapMethod,
         foldStyle: this.props.foldStyle
       }}
     />;

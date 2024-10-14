@@ -16,8 +16,6 @@ export type CursorStyleEnum = "ace" | "slim" | "smooth" | "wide";
 
 export type NewLineModeEnum = "auto" | "unix" | "windows";
 
-export type WrapMethodEnum = "code" | "text" | "auto";
-
 export type FoldStyleEnum = "markbegin" | "markbeginend" | "manual";
 
 export interface CodeEditorContainerProps {
@@ -85,7 +83,6 @@ export interface CodeEditorContainerProps {
     indentedSoftWrap: boolean;
     tabSize: number;
     wrap: boolean;
-    wrapMethod: WrapMethodEnum;
     foldStyle: FoldStyleEnum;
 }
 
@@ -159,6 +156,5 @@ export interface CodeEditorPreviewProps {
     indentedSoftWrap: boolean;
     tabSize: number | null;
     wrap: boolean;
-    wrapMethod: WrapMethodEnum;
     foldStyle: FoldStyleEnum;
 }
