@@ -1,7 +1,7 @@
 {
   "name": "codeeditor",
   "widgetName": "CodeEditor",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Ace code editor, as a Mendix pluggable widget.",
   "copyright": "© Mendix Technology BV 2022. All rights reserved.",
   "author": "Carter Moorse",
