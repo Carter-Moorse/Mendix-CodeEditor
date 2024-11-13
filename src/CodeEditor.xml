@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<widget id="carterm.codeeditor.CodeEditor" pluginWidget="true" needsEntityContext="true"
-  offlineCapable="true"
-  supportedPlatform="Web"
-  xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+<widget id="carterm.codeeditor.CodeEditor" pluginWidget="true" needsEntityContext="true" offlineCapable="true" supportedPlatform="Web"
+  xmlns="http://www.mendix.com/widget/1.0/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
   <name>Code Editor</name>
   <description>Ace code editor, as a Mendix pluggable widget.</description>
   <icon />
@@ -268,12 +266,16 @@
         </property>
       </propertyGroup>
       <propertyGroup caption="Data source">
-        <property key="value" type="attribute">
+        <property key="value" type="attribute" required="true" onChange="onChangeAction">
           <caption>Attribute</caption>
           <description></description>
           <attributeTypes>
             <attributeType name="String"/>
           </attributeTypes>
+        </property>
+        <property key="onChangeAction" type="action" required="false">
+          <caption>On change</caption>
+          <description></description>
         </property>
       </propertyGroup>
       <propertyGroup caption="Editability">
@@ -299,7 +301,7 @@
       <property key="highlightActiveLine" type="boolean" defaultValue="false">
         <caption>Highlight active line</caption>
         <description></description>
-      </property>      
+      </property>
       <property key="highlightSelectedWord" type="boolean" defaultValue="false">
         <caption>Highlight selected word</caption>
         <description></description>
