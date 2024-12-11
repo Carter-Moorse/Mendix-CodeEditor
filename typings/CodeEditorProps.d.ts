@@ -101,6 +101,7 @@ export interface CodeEditorPreviewProps {
     theme: ThemeEnum;
     mode: ModeEnum;
     value: string;
+    onChangeAction: {} | null;
     debounceChangePeriod: number | null;
     selectionStyle: SelectionStyleEnum;
     highlightActiveLine: boolean;
