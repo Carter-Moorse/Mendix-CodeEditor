@@ -1,12 +1,11 @@
 import { Component, ReactNode, createElement, createRef, RefObject } from "react";
 import { config } from "ace-builds";
 import AceEditor from "react-ace";
-import "emmet";
 
 import { CodeEditorContainerProps } from "../typings/CodeEditorProps";
 
 export default class CodeEditor extends Component<CodeEditorContainerProps> {
-    static basePath = "widgets/carterm/codeeditor/src-min-noconflict";
+    static basePath = "<%ACEPATH%>";
 
     editorRef: RefObject<AceEditor> = createRef();
 
@@ -29,7 +28,7 @@ export default class CodeEditor extends Component<CodeEditorContainerProps> {
         });
     }
 
-    loadModules() {
+    loadModules(): void {
         const editor = this.editorRef.current?.editor;
         if (!editor) {
             return;
@@ -45,10 +44,11 @@ export default class CodeEditor extends Component<CodeEditorContainerProps> {
             );
         }
         if (this.props.enableEmmet) {
+            // TODO: Add emmet lib to build
             this.loadAce("ext-emmet.js"); // .then(() => editor.setOption("enableEmmet", this.props.enableEmmet));
         }
         if (this.props.useElasticTabstops) {
-            this.loadAce("ext-elastic_tabstops_lite.js"); // .then(() => editor.setOption("useElasticTabstops", this.props.useElasticTabstops));
+            this.loadAce("ext-elastic_tabstops_lite.js");
         }
     }
 
