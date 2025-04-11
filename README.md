@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="coverimage.svg" alt="Cover image, code editor" title="Cover image" width="300px"/>
+  <img src="assets/coverimage.svg" alt="Cover image, code editor" title="Cover image" width="300px"/>
   
   ### Mendix CodeEditor
 
